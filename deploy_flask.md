@@ -12,16 +12,16 @@ $ cd downloads
 ```
 ## ssh到EC2
 EC2 > Instance > Connect 
-```
-$ ssh -i "allie-1005.pem"ubuntu@18.134.15.246
+```markdown
+$ ssh -i "`your_key`"ubuntu@`your_ip`
 ```
 >Output:
-The authenticity of host '18.134.15.246 (18.134.15.246)' can't be established.
+The authenticity of host '`your_ip` (`your_ip`)' can't be established.
 ECDSA key fingerprint is SHA256:sjPgJy3Ho4UDejjVGfTh9/jYOUVmf25OOptJdCI0994.
 Are you sure you want to continue connecting (yes/no)? 
   `yes`
 
->Output: Warning: Permanently added '18.134.15.246' (ECDSA) to the list of known hosts.
+>Output: Warning: Permanently added '`your_ip`' (ECDSA) to the list of known hosts.
 Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.4.0-1128-aws x86_64)... (略)
 ---
 ## Update Packages
