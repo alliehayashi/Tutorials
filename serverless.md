@@ -31,7 +31,7 @@ $ aws configure
 ```
 >Output:  
 AWS Access Key ID [None]:  `your access key`  
-AWS Secret Access Key [None]:   `your secret access key`
+AWS Secret Access Key [None]:   `your secret access key`  
 Default region name [None]: `eu-west-2 `   
 Default output format [None]: `json`
 
