@@ -25,7 +25,7 @@ Are you sure you want to continue connecting (yes/no)?
 Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.4.0-1128-aws x86_64)... (略)
 ---
 ## Update Packages
-接下來就會進到`ubuntu@ip:~$`的command line
+接下來就會進到`ubuntu@your_ip:~$`的command line
 ```
 $ sudo apt-get update
 $ sudo apt-get upgrade -y
@@ -75,7 +75,7 @@ def hello_world():
     return 'Hello, World!'
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80):QW
+    app.run(host="0.0.0.0", port=80)
 ```
 ## 執行
 ```
@@ -86,3 +86,5 @@ Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
 60.248.185.20 - - [04/Nov/2021 07:41:07] "GET / HTTP/1.1" 200 -
 60.248.185.20 - - [04/Nov/2021 07:41:08] "GET /favicon.ico HTTP/1.1" 404 -
 60.248.185.20 - - [04/Nov/2021 07:42:43] "GET / HTTP/1.1" 200 -
+## 大功告成！連線到你的ip去看看有沒有成功吧 (´ ｡✪ω✪｡｀) 
+Credits: Ada Chen
