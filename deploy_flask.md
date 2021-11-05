@@ -55,7 +55,7 @@ $ source bin/activate         ＃啟用venv
 ---
 ## Install Flask
 ```
-sudo apt-get install python3-flask
+$ sudo apt-get install python3-flask
 ```
 ---
 ## 使用vim創建檔案
