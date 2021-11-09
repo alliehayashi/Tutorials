@@ -1,9 +1,11 @@
 # AWS CLI Setups for Mac
-This tutorial will guide you from `setting up CLI` to `how to assume roles with MFA` verification. 
-* Enviorment: MacOS
-* using zsh
+This tutorial will guide you from `setting up CLI` to `how to assume roles with MFA verification`. 
+  
+Using:  
+* macOS Mojave 10.14.6
+* zsh 5.8 (x86_64-apple-darwin18.7.0)
 ---
-## Download CLI
+## 1. Download CLI
 ```bash
 $ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
 $ sudo installer -pkg AWSCLIV2.pkg -target /
@@ -17,68 +19,77 @@ installer: The install was successful.
 >ref: [Installing or updating the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 ---
-## Verify that the shell can find and run the aws command in your $PATH
+## 2. Verify that the shell can find and run the aws command in your $PATH
 ```bash
-$ which aws
+$ which aws    #儲存位置
+  
+->  /usr/local/bin/aws
 ```
 >
-/usr/local/bin/aws
+
 ```
-$ aws --version
+$ aws --version  
+  
+->  aws-cli/2.3.4 Python/3.8.8 Darwin/18.7.0 exe/x86_64 prompt/off  
 ```
-aws-cli/2.3.4 Python/3.8.8 Darwin/18.7.0 exe/x86_64 prompt/off
+
 
 ---
-## Configure AWS Account
+## 3. Configure AWS Account
 
 ```
 $ aws configure
 ```
 照著提示輸入相對應資料：  
+  
 AWS Access Key ID [None]:  `your access key`  
 AWS Secret Access Key [None]:   `your secret access key`  
 Default region name [None]: `your_region`   
 Default output format [None]: `json`
 
 ---
-## 檢查設定值
+## 4. 檢查設定值
 ```bash
-$ aws sts get-caller-identity    # (use :q to exit )
-```
- 
+$ aws sts get-caller-identity    # (use :q to exit )  
+
 {
     "UserId": "`your_user-id`",  
     "Account": "`your_account_id`",  
     "Arn": "arn:aws:iam::`your_iam_id`:  user/`your_account`"
 }
-
->ref: 
+```
 
 ```bash
-$ ls -la    #檢查是否有成功安裝.aws
-```
-total 552  
+$ ls -la    #檢查是否有成功安裝.aws  
+  
+-->  total 552  
 ...  
-drwxr-xr-x    4 allielin  staff    128 Nov  5 17:56 `.aws`
+drwxr-xr-x    4 allielin  staff    128 Nov  5 17:56 .aws
+```
+
 
 ```bash
-$ cat config    #查看所有profile
-```
+$ cat config    #查看所有profile  
+    
 [default]  
 region = eu-west-2  
 output = json
+```
+
 
 ```bash
-$ cat credentials    #check keys
-```
+$ cat credentials    #check keys  
+   
 [default]  
 aws_access_key_id = `your_access_key`  
 aws_secret_access_key = `your_secret_key`
+```
+
 
 >ref: [Command structure in the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-commandstructure.html)   
 [Configuration basics - Quick configuration with aws configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 ---
-## 安裝 Assume Role
+## 5. 安裝 Assume Role
 ```
 $ brew install remind101/formulae/assume-role
 ```
@@ -86,7 +97,7 @@ $ brew install remind101/formulae/assume-role
 >ref: [remind/assume-role](https://github.com/remind101/assume-role)
 
 ---
-##  Add New Role
+##  6. Add New Role
 這邊示範的 new role 以 `test` 來演示，suit yourself with your own name
 ```bash
 $ vim ~/.aws/config    #從vim編輯config
@@ -117,7 +128,7 @@ source_profile = `default`
 mfa_serial = arn:aws:iam::`iam_id`:mfa/`account`
 
 ---
-## Assume Role
+## 7. Assume Role
 ``` bash
 $ eval $(assume-role -duration 8h0m0s test)
 ``` 
@@ -133,17 +144,20 @@ $ env    #查看現在的role
 ASSUMED_ROLE=`test`  
 _=/usr/bin/env  
 
-## 更方便的設定 (for zsh)
+---
+## 8. 更方便的設定 (for zsh)
 If you use eval $(assume-role) frequently, you may want to create a alias for it:
 ```bash
-home$ ls -la    #顯示隱藏檔案在內的所有檔案
+home$ ls -la    #顯示隱藏檔案在內的所有檔案  
+
+->  -rw-r--r--    1 allielin  staff   4435 Nov  5 16:44 .zshrc
 ```
--rw-r--r--    1 allielin  staff   4435 Nov  5 16:44 `.zshrc`
+
 ```
 $ vim ~/.zshrc    #open vim
 ```
-將 `alias assume-role='function(){eval $(command assume-role $@);}'` 加入最底下
+將 `alias assume-role='function(){eval $(command assume-role $@);}'` 加到最底下
 ```
 $ assume-role -duration 8h0m0s test
 ```
-這樣以後只要打這行就能直接 assume role 囉
+這樣以後只要打這行就能直接 assume role 囉 🥳
