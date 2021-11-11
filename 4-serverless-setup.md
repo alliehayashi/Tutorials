@@ -126,5 +126,5 @@ $ serverless remove
 ### 更換Assume Role
 ```
 $ unset AWS_ACCESS_KEY_ID
-$ assume-role -duration 8h0m0s <profile>
+$ 
 ``` 

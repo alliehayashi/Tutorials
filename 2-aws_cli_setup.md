@@ -3,8 +3,11 @@ This tutorial will guide you from `setting up CLI` to `how to assume roles with 
   
 Requirements:
 - pip3
-- AWS IAM account  
-
+- AWS  
+  - IAM account
+  - access key
+  - secret key
+ 
 Using:  
 * macOS Mojave 10.14.6
 * zsh 5.8 (x86_64-apple-darwin18.7.0)
@@ -168,6 +171,6 @@ $ vim ~/.zshrc    #open vim
 ```
 將 `alias assume-role='function(){eval $(command assume-role $@);}'` 加到最底下
 ```
-$ assume-role -duration 8h0m0s test
+$ assume-role -duration 8h0m0s <test>
 ```
 這樣以後只要打這行就能直接 assume role 囉 🥳
