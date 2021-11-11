@@ -1,9 +1,16 @@
 # AWS CLI Setups for Mac
-This tutorial will guide you from `setting up CLI` to `how to assume roles with MFA verification`. 
+This tutorial will guide you from `setting up CLI` to `how to assume roles with MFA verification`.  
   
+Requirements:
+- pip3
+- AWS IAM account  
+
 Using:  
 * macOS Mojave 10.14.6
 * zsh 5.8 (x86_64-apple-darwin18.7.0)
+* AWS CLI V2
+
+
 ---
 ## 1. Download CLI
 ```bash
@@ -98,34 +105,42 @@ $ brew install remind101/formulae/assume-role
 
 ---
 ##  6. Add New Role
-這邊示範的 new role 以 `test` 來演示，suit yourself with your own name
+這邊示範的 new role 以 profile `test` 來演示，suit yourself with your own name
 ```bash
 $ vim ~/.aws/config    #從vim編輯config
 ```
-在vim裡面新建一個 `test` profile   
-  
+### 在 config 裡新建 profile   
+``` 
 [default]  
 region = eu-west-2  
 output = json
 
-[profile `test`]  
+[profile <test>]  
 region = eu-west-2  
 output = json
+```
+### credentials 設定
+
 ```bash
 $ vim ~/.aws/credentials    #從vim編輯credentials
 ```
-輸入assume role的資料，由於先登入`default`之後才能切換帳號，所以`source_profile`填寫`default`，就能吃到`default`的key了。  
-另外，因為team有設置MFA認證所以會有 `mfa_serial`的設定  
-Please notice that youu don't have to add 'profile' before `test` here.
   
-[default]  
-aws_access_key_id = `access_key`  
-aws_secret_access_key = `secret key`    
+- Please note that youu don't have to add 'profile' before `test` here.
 
-[`test`]  
-role_arn = arn:aws:iam::`role_id`:role/`role`  
-source_profile = `default`  
-mfa_serial = arn:aws:iam::`iam_id`:mfa/`account`
+```
+[default]  
+aws_access_key_id = <access_key>  
+aws_secret_access_key = <secret key>
+```
+### MFA 認證及 switch role
+- `mfa_serial`的設定適用登入時有設置 MFA 認證   
+- 需要 assume role 時，需要先登入自己的IAM帳號（這裡放在 `default` 裡），再切換帳號。所以我們在 `test` 裡面加入一行 `source_profile  = default`填寫，就能吃到`default`的key了。
+```
+[<test>]  
+role_arn = arn:aws:iam::<role_id>:role/<role>  
+source_profile = <default>  
+mfa_serial = arn:aws:iam::<iam_id>:mfa/<account>
+```
 
 ---
 ## 7. Assume Role
@@ -146,12 +161,7 @@ _=/usr/bin/env
 
 ---
 ## 8. 更方便的設定 (for zsh)
-If you use eval $(assume-role) frequently, you may want to create a alias for it:
-```bash
-home$ ls -la    #顯示隱藏檔案在內的所有檔案  
-
-->  -rw-r--r--    1 allielin  staff   4435 Nov  5 16:44 .zshrc
-```
+If you use `$ eval $(assume-role)` frequently, you might want to create this...
 
 ```
 $ vim ~/.zshrc    #open vim

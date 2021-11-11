@@ -4,6 +4,10 @@ Create `python3.7.7` venv with `pyenv`, `pyenv-virtualenv` and `virtualenv` on M
 Using:
 * pip3 (pip 21.3.1)
 * Homebrew 3.2.14-9-g292c1fd
+* macOS Mojave 10.14.6
+* zsh 5.8 (x86_64-apple-darwin18.7.0)
+* virtualenv 20.10.0p
+* pyenv 2.0.1
   
 >ref: [【Python教學】使用 pyenv 和 virtualenv 打造 Python 環境](https://www.maxlist.xyz/2020/04/01/python-pyenv-virtualenv/)
 ---
@@ -45,18 +49,18 @@ $ pyenv versions
 ### 首先 cd 到想要創建的file底下
 - `3.7.7`是python版本，最後的`test`則是 venv 名稱，可自行更換
 ```
-$ virtualenv -p ~/.pyenv/versions/3.7.7/bin/python test   
+$ virtualenv -p ~/.pyenv/versions/3.7.7/bin/python <test>   
 ```
 ### 使用環境預設的python版本，則是：
 ```
-$ virtualenv test
+$ virtualenv <test>
 ```
 
 ### 啟動環境
 - 成功建立後可以看到資料夾裡多出了一個 `test` 資料夾。
 - 記得要把`test`改成上一步中新建的 venv 名稱
 ```bash
-$ source test/bin/activate
+$ source <test>/bin/activate
 ```
 ### 查看版本
 - cd 到 `test`資料夾裡
@@ -88,5 +92,5 @@ $ deactivate
 ### 刪除venv
 - 一樣將`test`替換成你的 venv
 ```bash
-$ rm -rf test
+$ rm -rf <test>
 ```
