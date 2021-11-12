@@ -71,13 +71,13 @@ $ serverless deploy --aws-profile <test>
 ![Image](https://github.com/alliehayashi/Markdown-Pictures/raw/master/serverless%20deploy%20--aws-profile%20.png)
 ### Console 對照
  - S3 Bucket
-![S3](https://github.com/alliehayashi/Markdown-Pictures/raw/master/buckets.png)  
+![S3](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/9-buckets.png)  
 
  - CloudFormation Stacks
-![stacks](https://github.com/alliehayashi/Markdown-Pictures/raw/master/stacks.png) 
+![stacks](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/10-stacks.png) 
 
  - Lambda Functions
-![fun](https://github.com/alliehayashi/Markdown-Pictures/raw/master/lambda.png)
+![fun](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/13-lambda.png)
 
 ---
 ## 4. Add Event to Function
@@ -109,10 +109,10 @@ $ serverless deploy -v
 - 注意：如果權限需要 assume role 的話，記得下 `$ eval $(assume-role -duration 8h0m0s <profile>)` 做切換動作，並從 `$ env` 確認有切換成功
 - [click here](https://github.com/alliehayashi/Tutorials/blob/master/aws_cli_setup.md) for assume role settings tutorial  
 ### 執行結果
-![output](https://github.com/alliehayashi/Markdown-Pictures/raw/master/serverless%20deploy%20-v-1.png)
+![output](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/8-aws-deploy-v-with-url.png)
 
 ### 網頁畫面
-![web_page](https://github.com/alliehayashi/Markdown-Pictures/raw/master/serverless%20deploy%20-v-2.png)
+![web_page](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/4-aws-webpage-output.png)
 
 ---
 ## 6. 其他操作
@@ -122,9 +122,10 @@ $ serverless remove
 ```
 因為資料其實是會先上傳到 S3，再由CloudFormation 進行 deploy。 所以必須先刪除 S3 裡的資料才能刪除 Cloud Formation 上面的 Stack
   
-![remove](https://github.com/alliehayashi/Markdown-Pictures/raw/master/remove.png)
+![remove](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/12-sls-remove.png)
 ### 更換Assume Role
 ```
 $ unset AWS_ACCESS_KEY_ID
-$ 
+$ eval $(assume-role -duration 8h0m0s <profile>)
 ``` 
+必須先清除 `AWS_ACCESS_KEY_ID`，才能進行 assume role 的動作，否則雖然看起來好像有切換成功，但實際上還是沒吃到新的設定噢
