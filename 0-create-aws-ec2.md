@@ -4,8 +4,10 @@
 登入 IAM 帳號後，switch 到 `Camelot_Dev` Role  
 ![1](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ec2/1-aws-login.png)
 
-找到 EC2
+找到 EC2  
+
 ![2](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ec2/2-select-ec2.png)
+  
 這裡使用 `London(eu-east-2` region 做示範
 
 ---
