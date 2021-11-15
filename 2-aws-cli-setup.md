@@ -151,7 +151,7 @@ mfa_serial = arn:aws:iam::<iam_id>:mfa/<account>
 $ eval $(assume-role -duration 8h0m0s test)
 ``` 
 `-duration` 是可以保持登入狀態的時間，這邊的話是8h0m0s，也就是8小時  
-最後面的 `test` 就是前面創建的 profile  
+最後面的 `test` 則是前面創建的 profile  
 
 執行後會要求輸入 `MFA code`
 ```bash
