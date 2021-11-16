@@ -47,7 +47,7 @@ $ pyenv versions
 ---
 ## 3. Create your Virtualenv 🎉
 ### 首先 cd 到想要創建的file底下
-- `3.7.7`是python版本，最後的`test`則是 venv 名稱，可自行更換
+- `3.7.7` 是想建立的python版本，最後的`test`則是 venv 名稱，可自行更換
 ```
 $ virtualenv -p ~/.pyenv/versions/3.7.7/bin/python <test>   
 ```

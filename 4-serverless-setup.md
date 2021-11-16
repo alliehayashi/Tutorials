@@ -68,7 +68,7 @@ provider:
 ```
 $ serverless deploy --aws-profile <test>  
 ```
-![Image](https://github.com/alliehayashi/Markdown-Pictures/raw/master/serverless%20deploy%20--aws-profile%20.png)
+![Image](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/1-serverless-deploy--aws-profile.png)
 ### Console 對照
  - S3 Bucket
 ![S3](https://github.com/alliehayashi/Markdown_Pictures/raw/master/aws-setup/9-buckets.png)  
