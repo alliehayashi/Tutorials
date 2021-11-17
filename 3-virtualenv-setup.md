@@ -58,12 +58,15 @@ $ virtualenv <test>
 
 ### 啟動環境
 - 成功建立後可以看到資料夾裡多出了一個 `test` 資料夾。
-- 記得要把`test`改成上一步中新建的 venv 名稱
+- 記得要把 `test` 改成上一步中新建的 venv 名稱
 ```bash
 $ source <test>/bin/activate
 ```
+```
+$ . bin/activate    #另一種啟用指令
+```
 ### 查看版本
-- cd 到 `test`資料夾裡
+- cd 到 `test` 資料夾裡
 ```bash
 $ python3 --version    #版本  
   
