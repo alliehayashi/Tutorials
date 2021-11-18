@@ -10,6 +10,7 @@ Using:
 - zsh 5.8 (x86_64-apple-darwin18.7.0)
 - aws-encryption-sdk (3.1.0)
 - aws-encryption-sdk-cli (4.1.0)
+- aws-cli (2.3.4)
   
 ref:
 - [AWS CLI Command Line Refernace-Encrpy](https://docs.aws.amazon.com/cli/latest/reference/kms/encrypt.html)  

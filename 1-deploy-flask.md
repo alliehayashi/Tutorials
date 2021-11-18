@@ -1,9 +1,9 @@
 # Deploy Flask Web via AWS
-這邊預設已建立好EC2 Instance, 並已下載 key pair [click here for tutorial](https://github.com/alliehayashi/Tutorials/blob/master/0-create-aws-ec2.md)
   
 Requirements:
 - Ubuntu 16.04 (AWS EC2 Instance)
-
+- [EC2](https://github.com/alliehayashi/Tutorials/blob/master/0-create-aws-ec2.md)  
+  
 Using：
 - macOS Mojave 10.14.6
 - zsh 5.8 (x86_64-apple-darwin18.7.0)

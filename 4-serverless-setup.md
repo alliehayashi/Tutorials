@@ -4,14 +4,12 @@ If you are trying to deploy a Serverless Web with AWS Lambda, and needs to switc
 Requirements:
 - pip3
 - Virtualenv installed
-- AWS  
-  - IAM account
-  - access key
-  - secret key 
+- AWS IAM account (access key + secret key)
 
 Using: 
 - macOS Mojave 10.14.6
 - zsh 5.8 (x86_64-apple-darwin18.7.0)
+- aws-cli (2.3.4)
 - Serverless: 
   -  Framework Core: 2.65.0 
   - Plugin: 5.5.1 

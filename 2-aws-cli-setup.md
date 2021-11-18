@@ -3,15 +3,12 @@ This tutorial will guide you from `setting up CLI` to `how to assume roles with 
   
 Requirements:
 - pip3
-- AWS  
-  - IAM account
-  - access key
-  - secret key
+- AWS IAM account (access key + secret key)
  
 Using:  
 * macOS Mojave 10.14.6
 * zsh 5.8 (x86_64-apple-darwin18.7.0)
-* AWS CLI V2
+* aws-cli (2.3.4)
 
 
 ---
