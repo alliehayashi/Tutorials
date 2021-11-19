@@ -34,7 +34,7 @@ $ aws ses list-identities
 ```
 ![6](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ses/06-aws%20ses%20list-identities.png)
  
-or on `Console` : 
+OR on `Console` : 
   
 ![1](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ses/01-verified.png)
 
@@ -63,7 +63,7 @@ $ aws ses get-send-quota --region <region>
 ---
 ## 4. Error Messages
 ### # Email address is not verified
-![7](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ses/07-not%20verified.png)
-happens if your sender/reciever email ain't verified yet
+happens if your sender/reciever email ain't verified yet  
 
+![7](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ses/07-not%20verified.png)
 ❯❯❯ make sure both sender/reciever email **ARE VERIFIED**
