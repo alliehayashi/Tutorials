@@ -1,7 +1,6 @@
 # Configure SES via AWS CLI
 Requirements:
 - pip3
-- Virtualenv installed
 - AWS IAM account (access key + secret key)
 
 Using: 
@@ -15,11 +14,11 @@ First, log into the account that has permission to use SES service
 
 --- 
 ## 2. Verify Source Email
-### Verify Sender Email
+### Setup Sender Email
 ```markdown
 $ aws ses verify-email-identity --email-address <sender-email> --region <region>
 ```
-### Verify Receiver Email
+### Setup Receiver Email
 ```markdown
 $ aws ses verify-email-identity --email-address <reciever-email> --region <region>
 ```
@@ -53,7 +52,8 @@ $ aws ses send-email \
 ```
 Output:  
 
-![8](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ses/08-send.png)
+![8](https://github.com/alliehayashi/Markdown_Pictures/raw/master/ses/08-send.png)  
+check spam mail if you didn't receive the mail
 ### Email Quota
 ```markdown
 $ aws ses get-send-quota --region <region>
