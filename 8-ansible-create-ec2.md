@@ -53,7 +53,6 @@ Playbook 是以 yml 寫成，語法有些比較特別的地方，以下列出一
           # group --> security group
           group: allie-security-group
           assign_public_ip: yes
-          #instance_profile_name: GSBU-SVD
         register: ec2
 ```
 
