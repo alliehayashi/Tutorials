@@ -10,14 +10,14 @@
 ## 2. Clone 
 把剛剛 fork 出來的 project clone 到 local
 ```
-$ git clone git@github.com:<usrname>/camelot-backend.git
+$ git clone git@github.com:<usr>/<repo>.git
 ```
 ---
 ## 3. 保持同步
 透過加入 upstream，可以隨時保持與原本的 repo 同步
 ### ＃新增 upstream
 ```
-$ git remote add upstream git@github.com:zyxel-dc/camelot-backend.git
+$ git remote add upstream git@github.com:<usr>/<repo>.git
 ```
 ### ＃檢視 remote repo
 ```
@@ -31,12 +31,10 @@ $ git remote rm upstream
 
 ---
 ## 4. 設定 Commit template
-在 config 裡設定 commit 訊息，方便團隊統一格式
+在 config 裡設定 commit 訊息，方便團隊統一格式。已有此檔案的話可以直接跳到 git config 指令
 ```
-$ git config --global commit.template ./.git-commit-template
-```
-`.git-commit-template` 內容
-```
+$ vim .git-commit-template  
+
 [ENHANCEMENT][]
 [BUGFIX][]
 [WORKAROUND][]
@@ -56,7 +54,9 @@ Reviewer:
 Note:
 	N/A
 ```
-
+```
+$ git config --global commit.template ./.git-commit-template
+```
 當需要 commit的時候就會跳出 vim 編輯器帶入此 template
 ```
 $ git commit
@@ -65,7 +65,8 @@ $ git commit
 
 ---
 ## 5. Pull Request
-首先先 push 到自己的 repo
+首先先 push 到自己的 repo,
+注意 branch 的名字
 ![6](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/06-which-branch.png)
 
 ```
@@ -74,6 +75,6 @@ $ git push origin develop    #git push <repo> <branch>
 再到原始的 repo 去，找到 `Pulll reqests`，建立新的 pull request
 ![4](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/04-pull%20request.png)
 - 黃色是剛剛commit的內容
-- Reiviewers 填入所有團隊成員
+- Reviewers 填入所有團隊成員
 - Assignees 填入要 approve 的人
 ![5](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/05-create-pull-request.png)
