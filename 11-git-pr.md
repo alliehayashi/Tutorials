@@ -2,8 +2,9 @@
 >[Working With Github](https://github.com/zyxel-dc/camelot-backend/wiki/Working-With-Github)
 ## 1. Fork Project
 所有的開發都必須在 fork 出來的 repo 上進行
-![1](https://github.com/alliehayashi/Markdown_Pictures/raw/master/pics/git-pr/01-fork.png)
-![2](https://github.com/alliehayashi/Markdown_Pictures/raw/master/pics/git-pr/02-forked-from.png)
+![1](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/01-fork.png)
+
+![2](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/02-forked-from.png)
 
 ---
 ## 2. Clone 
@@ -22,7 +23,7 @@ $ git remote add upstream git@github.com:zyxel-dc/camelot-backend.git
 ```
 $ git remote -vvv
 ```
-![3](https://github.com/alliehayashi/Markdown_Pictures/raw/master/pics/git-pr/03-remote-vvv.png)
+![3](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/03-remote-vvv.png)
 ### ＃刪除 upstream
 ```
 $ git remote rm upstream
@@ -60,19 +61,19 @@ Note:
 ```
 $ git commit
 ```
-![7](https://github.com/alliehayashi/Markdown_Pictures/blob/master/pics/git-pr/07-commit-template.png)
+![7](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/07-commit-template.png)
 
 ---
 ## 5. Pull Request
 首先先 push 到自己的 repo
-![6](https://github.com/alliehayashi/Markdown_Pictures/raw/master/pics/git-pr/06-which-branch.png)
+![6](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/06-which-branch.png)
 
 ```
 $ git push origin develop    #git push <repo> <branch>
 ```
 再到原始的 repo 去，找到 `Pulll reqests`，建立新的 pull request
-![4](https://github.com/alliehayashi/Markdown_Pictures/raw/master/pics/git-pr/04-pull%20request.png)
+![4](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/04-pull%20request.png)
 - 黃色是剛剛commit的內容
 - Reiviewers 填入所有團隊成員
 - Assignees 填入要 approve 的人
-![5](https://github.com/alliehayashi/Markdown_Pictures/raw/master/pics/git-pr/05-create-pull-request.png)
+![5](https://github.com/alliehayashi/Markdown_Pictures/raw/master/git-pr/05-create-pull-request.png)
