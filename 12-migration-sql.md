@@ -38,17 +38,17 @@ source <project-path>/camelot-backend/venv/bin/activate
 ![3]
 
 ---
-## 3.  MySQL settings
+## 3. Create DB
 ### # Login to MySQL
 ```
 mysql -u root -p
 ```
-![7]
-
-### # Create DB
 ```
 CREATE DATABASE camelot4zyxel;
 ```
+![7]
+
+
 沒有新建 camelot4zyxel DB 的話會出現以下錯誤:  
 ![5]
 
