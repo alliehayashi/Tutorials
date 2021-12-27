@@ -1,5 +1,5 @@
 # Bugfix Proccess
-### ▶️ 以 [bugFix #35354](https://redmine.marketplace.zyxel.com/issues/35354) 為例，解說 修完 bug 後執行unit test 的流程
+### ▶️ 以 [bugFix #35354](https://redmine.marketplace.zyxel.com/issues/35354) 為例，解說修完 bug 後執行unit test 的流程
   
 ### Prerequisite:  
 - ### 已安裝所需套件及環境 [$ make build_env](https://github.com/alliehayashi/zyxel_notes/blob/master/03-deploy-camelot-backend.md#4-build-host-environment)
@@ -64,7 +64,7 @@ $ pytest -v tests/unit/asset/test_biz_judge_mzc_error_code.py
 ```
 ![2]  
 
-可以做反向測試看看會不會報錯
+- 可以做反向測試看看會不會報錯
 - 這裡把 原本會回傳 False 的 mzc_code.need_to_upgrade_device_firmware.value 放進回傳 True 的 function 實驗
 ```python
 # 2003 -->  error code 
@@ -73,7 +73,7 @@ def test_is_fail_2003():
 ```
 再跑一次 `$ pytest -v tests/unit/asset/test_biz_judge_mzc_error_code.py` 的結果：
 ![3]  
--可以看到回傳的結果因為是 False，但我們給的值是 True，所以測試失敗了
+- 可以看到回傳的結果因為是 False，但我們給的值是 True，所以測試失敗了
 
 ---
 ## 3. deploy to dev site
